@@ -25,5 +25,15 @@ namespace ThreadedProject2 {
 			string name = Interaction.InputBox("Type in the name of the new supplier and hit OK.", "Create New Supplier", "");
 
 		}
-	}
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
 }
