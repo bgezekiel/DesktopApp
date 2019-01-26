@@ -29,5 +29,15 @@ namespace ThreadedProject2 {
 
 			SuppliersDB.Suppliers.Add(new KeyValuePair<string, int>(name.ToUpper(), i));
 		}
-	}
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
 }
