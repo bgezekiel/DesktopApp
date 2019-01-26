@@ -54,6 +54,7 @@
     <Compile Include="PackagesDB.cs" />
     <Compile Include="ProductsDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupDelStatements.cs" />
     <Compile Include="SuppliersDB.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>

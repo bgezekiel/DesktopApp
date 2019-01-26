@@ -67,9 +67,11 @@ namespace DBClasses {
 			using(SqlConnection con = new SqlConnection(ConnectionString.Connection.Value())) {
 				con.Open();
 
-				int id = Int32.Parse(new SqlCommand("SELECT IDENT_CURRENT('Packages')+1;", con).ExecuteScalar().ToString());
+				int id = (int)new SqlCommand("SELECT MAX(SupplierId)+1 FROM Suppliers;", con).ExecuteScalar();
+				id++;
 
-				using(SqlCommand cmd = new SqlCommand("INSERT INTO Suppliers (SupName) VALUES (@name);", con)) {
+				using (SqlCommand cmd = new SqlCommand("INSERT INTO Suppliers (SupplierId, SupName) VALUES (@sid, @name);", con)) {
+					cmd.Parameters.AddWithValue("@sid", id);
 					cmd.Parameters.AddWithValue("@name", supplierName);
 					cmd.ExecuteNonQuery();
 				}
@@ -78,7 +80,26 @@ namespace DBClasses {
 
 		}
 
+		public static bool[] GetSelectedValue(int supplierID) {
+			using(SqlConnection con = new SqlConnection(ConnectionString.Connection.Value())) {
+				con.Open();
 
+				using(SqlCommand cmd = new SqlCommand("SELECT * FROM Products_Suppliers WHERE SupplierId = @sid;", con)) {
+					cmd.Parameters.AddWithValue("@sid", supplierID);
+
+					SqlDataReader sdr = cmd.ExecuteReader();
+					bool[] vals = new bool[11];
+					while (sdr.Read()) {
+						vals[sdr.GetInt32(1)] = true;
+
+					}
+
+					return vals;
+
+					
+				}
+			}
+		}
 		public static void EditValue(int productID, int supplierID, bool create) {
 			using(SqlConnection con = new SqlConnection(ConnectionString.Connection.Value())) {
 				con.Open();
@@ -100,30 +121,47 @@ namespace DBClasses {
 			}
 		}
 
-		public static void DeleteSupplier(int id) {
+		public static bool DeleteSupplier(int id) {
 			using(SqlConnection con = new SqlConnection(ConnectionString.Connection.Value())) {
 
 				con.Open();
-				using(SqlCommand cmd = new SqlCommand("SELECT * FROM Products_Suppliers WHERE SupplierId = @sid;", con)) {
-					cmd.Parameters.AddWithValue("@sid", id);
+				DialogResult dr = MessageBox.Show("WARNING:\n" +
+					"Deleting a supplier will delete associated booking details and supplier contacts." +
+	 " It will also remove this supplier from ALL packages it is associated with.\nContinue?", "Confirm Delete", MessageBoxButtons.YesNo);
 
-					int i = cmd.ExecuteNonQuery();
+				if (dr == DialogResult.Yes) {
 
-					if(i > 0) {
-						DialogResult rs;
-						if(i == 1) {
-							rs = MessageBox.Show("Deleting this supplier will also remove it from 1 affected package. Proceed?", "Confirm Delete", MessageBoxButtons.YesNo);
-						} else {
-							rs = MessageBox.Show("Deleting this supplier will also remove it from " + i + " affected packages. Proceed?", "Confirm Delete", MessageBoxButtons.YesNo);
-						}
+					//This queries are found in DBClasses.SupDelStatements as they are VERY long queries.
+					//Clear - Packages_Products_Suppliers
+					SqlCommand cmdPPS = new SqlCommand(SupDelStatements.PSS_Query, con);
+					cmdPPS.Parameters.AddWithValue("@sid", id);
+					cmdPPS.ExecuteNonQuery();
 
-						if(rs == DialogResult.Yes) {
+					//Clear - BookingDetails
+					SqlCommand cmdBD = new SqlCommand(SupDelStatements.BD_Query, con);
+					cmdBD.Parameters.AddWithValue("@sid", id);
+					cmdBD.ExecuteNonQuery();
 
-						} else {
+					//Clear - Products_Suppliers
+					SqlCommand cmdPS = new SqlCommand(SupDelStatements.PS_Query, con);
+					cmdPS.Parameters.AddWithValue("@sid", id);
+					cmdPS.ExecuteNonQuery();
 
-						}
-						
-					}
+					//Clear - SupplierContacts
+					SqlCommand cmdSC = new SqlCommand(SupDelStatements.SC_Query, con);
+					cmdSC.Parameters.AddWithValue("@sid", id);
+					cmdSC.ExecuteNonQuery();
+
+					//Clear - Suppliers
+					SqlCommand cmdS = new SqlCommand(SupDelStatements.S_Query, con);
+					cmdS.Parameters.AddWithValue("@sid", id);
+					cmdS.ExecuteNonQuery();
+
+					MessageBox.Show("Deleted supplier.", "Success");
+					return true;
+
+				} else {
+					return false;
 				}
 			}
 		}
