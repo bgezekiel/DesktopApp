@@ -67,7 +67,7 @@ namespace DBClasses {
 			using(SqlConnection con = new SqlConnection(ConnectionString.Connection.Value())) {
 				con.Open();
 
-				int id = (int)new SqlCommand("SELECT IDENT_CURRENT('Packages')+1;", con).ExecuteScalar();
+				int id = Int32.Parse(new SqlCommand("SELECT IDENT_CURRENT('Packages')+1;", con).ExecuteScalar().ToString());
 
 				using(SqlCommand cmd = new SqlCommand("INSERT INTO Suppliers (SupName) VALUES (@name);", con)) {
 					cmd.Parameters.AddWithValue("@name", supplierName);

@@ -24,6 +24,10 @@ namespace ThreadedProject2 {
 		private void CreateNewSupplier(object sender, EventArgs e) {
 			string name = Interaction.InputBox("Type in the name of the new supplier and hit OK.", "Create New Supplier", "");
 
+
+			int i = SuppliersDB.AddNewSupplier(name.ToUpper());
+
+			SuppliersDB.Suppliers.Add(new KeyValuePair<string, int>(name.ToUpper(), i));
 		}
 	}
 }
