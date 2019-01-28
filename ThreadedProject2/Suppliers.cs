@@ -10,17 +10,31 @@ using System.Windows.Forms;
 using DBClasses;
 using Microsoft.VisualBasic;
 
+/**
+ * Project: OOSD Threaded Project 2
+ * 
+ * Suppliers class. Used for the Create/Edit/Delete suppliers page. 
+* 
+* Author: Hayden Belanger
+* Date: Jan 2019
+* Commenter: Eugenia Chiu and Hayden Belanger
+*/
+
 namespace ThreadedProject2 {
 	public partial class Suppliers : Form {
 		public Suppliers() {
 			InitializeComponent();
 
-
+            //LBSuppliers is the list box in the application design page.
+            //Set ValueMember of the list box as "Value".
+            //Set the DisplayMember (what is shown in the listbox) as the "Key".
+            //Bind the list box datasoure to SuppliersDB.SuppliersBindingSource. This is to allow for data in dropdown menu or listbox
 			LBSuppliers.ValueMember = "Value";
 			LBSuppliers.DisplayMember = "Key";
 			LBSuppliers.DataSource = SuppliersDB.SuppliersBindingSource;
 		}
 
+        //Method for creating new supplier
 		private void CreateNewSupplier(object sender, EventArgs e) {
 			string name = Interaction.InputBox("Type in the name of the new supplier and hit OK.", "Create New Supplier", "");
 
