@@ -141,5 +141,20 @@ namespace ThreadedProject2
             KeyValuePair<string, int> v = (KeyValuePair<string, int>)LBSuppliers.SelectedItem;
             SuppliersDB.Suppliers.Remove(v);
         }
+
+        private void BtnCreate_Click(object sender, EventArgs e)
+        {
+            new AddNewSupplier().ShowDialog(this);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

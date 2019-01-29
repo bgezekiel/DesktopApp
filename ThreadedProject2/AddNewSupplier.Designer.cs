@@ -499,6 +499,7 @@
             this.btnBack.TabIndex = 15;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnClose
             // 
@@ -509,8 +510,10 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(224, 63);
             this.btnClose.TabIndex = 16;
-            this.btnClose.Text = "Close Application";
+            this.btnClose.Tag = "s";
+            this.btnClose.Text = "Exit Program";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // AddNewSupplier
             // 
