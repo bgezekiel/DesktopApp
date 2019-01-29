@@ -50,5 +50,10 @@ namespace ThreadedProject2
 		private void btnAddPackages_Click(object sender, EventArgs e) {
 			new CreateNewPackage().ShowDialog(this);
 		}
-	}
+
+        private void BtnSuppliers_Click(object sender, EventArgs e)
+        {
+            new Suppliers().ShowDialog(this);
+        }
+    }
 }

@@ -33,6 +33,7 @@
             this.btnAddPackages = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.BtnSuppliers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnViewPackages
@@ -92,6 +93,23 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // BtnSuppliers
+            // 
+            this.BtnSuppliers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
+            this.BtnSuppliers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnSuppliers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSuppliers.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnSuppliers.FlatAppearance.BorderSize = 5;
+            this.BtnSuppliers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(167)))), ((int)(((byte)(25)))));
+            this.BtnSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSuppliers.Location = new System.Drawing.Point(468, 280);
+            this.BtnSuppliers.Name = "BtnSuppliers";
+            this.BtnSuppliers.Size = new System.Drawing.Size(251, 128);
+            this.BtnSuppliers.TabIndex = 20;
+            this.BtnSuppliers.Text = "Create / Modify / Delete Suppliers";
+            this.BtnSuppliers.UseVisualStyleBackColor = false;
+            this.BtnSuppliers.Click += new System.EventHandler(this.BtnSuppliers_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,6 +118,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(796, 497);
+            this.Controls.Add(this.BtnSuppliers);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnAddPackages);
@@ -120,6 +139,7 @@
         private System.Windows.Forms.Button btnAddPackages;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnSuppliers;
     }
 }
 
