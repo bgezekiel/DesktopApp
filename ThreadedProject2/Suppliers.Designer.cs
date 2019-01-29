@@ -127,6 +127,7 @@
             this.BtnDelete.TabIndex = 4;
             this.BtnDelete.Text = "Delete Supplier";
             this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // CBYacht
             // 

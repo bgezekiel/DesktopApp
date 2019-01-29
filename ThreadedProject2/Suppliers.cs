@@ -15,7 +15,7 @@ using DBClasses;
  * 
  * Suppliers class. Used for the Create/Edit/Delete suppliers page. 
 * 
-* Author: Hayden Belanger
+* Author: Hayden Belanger + Eugenia Chiu
 * Date: Jan 2019
 * Commenter: Eugenia Chiu and Hayden Belanger
 */
@@ -90,44 +90,34 @@ namespace ThreadedProject2
         private void Clicked(object sender, EventArgs e)
         {
             int i;
-            if (CBAir == sender)
-            {
+            if (CBAir == sender){
                 i = 1;
             }
-            else if (CBAttractions == sender)
-            {
+            else if (CBAttractions == sender){
                 i = 2;
             }
-            else if (CBCar == sender)
-            {
+            else if (CBCar == sender){
                 i = 3;
             }
-            else if (CBCruise == sender)
-            {
+            else if (CBCruise == sender){
                 i = 4;
             }
-            else if (CBHotel == sender)
-            {
+            else if (CBHotel == sender){
                 i = 5;
             }
-            else if (CBMotor == sender)
-            {
+            else if (CBMotor == sender){
                 i = 6;
             }
-            else if (CBRail == sender)
-            {
+            else if (CBRail == sender){
                 i = 7;
             }
-            else if (CBTours == sender)
-            {
+            else if (CBTours == sender){
                 i = 8;
             }
-            else if (CBTravel == sender)
-            {
+            else if (CBTravel == sender){
                 i = 9;
             }
-            else
-            {
+            else{
                 i = 10;
             }
             CheckBox val = (CheckBox)sender;
@@ -155,6 +145,11 @@ namespace ThreadedProject2
         private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
