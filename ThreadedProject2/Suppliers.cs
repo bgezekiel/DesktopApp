@@ -146,10 +146,5 @@ namespace ThreadedProject2
         {
             Application.Exit();
         }
-
-        private void BtnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
