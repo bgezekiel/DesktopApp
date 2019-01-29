@@ -119,7 +119,7 @@
             this.BtnSuppliers.TabIndex = 20;
             this.BtnSuppliers.Text = "Create / Modify / Delete Suppliers";
             this.BtnSuppliers.UseVisualStyleBackColor = false;
-            this.BtnSuppliers.Click += new System.EventHandler(this.BtnSuppliers_Click);
+            //this.BtnSuppliers.Click += new System.EventHandler(this.BtnSuppliers_Click);
             // 
             // richTextBox1
             // 
