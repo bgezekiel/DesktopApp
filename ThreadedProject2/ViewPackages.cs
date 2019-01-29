@@ -16,7 +16,7 @@ using System.Windows.Forms;
 * ViewPackages Form with navigation buttons. This page is for displaying package information for
 * easier read and access
 * 
-* Author:  Brandon Ezekiel / Eugenia Chiu
+* Author:  Brandon Ezekiel
 * Date: Jan 2019
 * Commenter: Brandon Ezekiel / Eugenia Chiu
 */
@@ -33,6 +33,7 @@ namespace ThreadedProject2
         }
 
         private Package packages; // create object Package
+        
 
         // get packages from GetPackages method
         private void GetPackages(int packID)
@@ -63,6 +64,14 @@ namespace ThreadedProject2
         private void ViewPackages_Load(object sender, EventArgs e)
         {
             comboBox1.Focus();
+            txtName.Enabled = false;
+            dtStart.Enabled = false;
+            dtEnd.Enabled = false;
+            txtPrice.Enabled = false;
+            richTextBox1.Enabled = false;
+            lstPackageProducts.Enabled = false;
+            btnUpdate.Visible = false;
+            btnDelete.Visible = false;
         }
 
         // closes the window and to return to home window
@@ -96,6 +105,7 @@ namespace ThreadedProject2
             {
                 Package pack = new Package(); // default constructor
                 pack = ViewPackagesDB.GetPackage(comboBox1.Text);
+                packages = pack;
 
                 txtName.Text = pack.PkgName.ToString();
                 dtStart.Value = pack.PkgStartDate;
@@ -104,6 +114,52 @@ namespace ThreadedProject2
                 richTextBox1.Text = pack.PkgDesc.ToString();
                 
             }
+        }
+
+        private void btnUpdate_CLick(object sender, EventArgs e)
+        {
+            
+            Package update = new Package();
+            update.PkgName = txtName.Text;
+            update.PkgStartDate = dtStart.Value;
+            update.PkgEndDate = dtEnd.Value;
+            update.PkgBasePrice = Convert.ToDecimal(txtPrice.Text.Substring(1));
+            update.PkgDesc = richTextBox1.Text;
+
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to update package?", "Update", MessageBoxButtons.YesNo);
+
+
+            bool updated = false;
+            updated = ViewPackagesDB.UpdatePackage(packages, update);
+            if (updated)
+            {
+                MessageBox.Show("Update Successful!");
+
+                GetPackages();
+            }
+            else
+            {
+                MessageBox.Show("Error. Please update a field.");
+                
+            }
+
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            txtName.Enabled = true;
+            dtStart.Enabled = true;
+            dtEnd.Enabled = true;
+            txtPrice.Enabled = true;
+            richTextBox1.Enabled = true;
+            lstPackageProducts.Enabled = true;
+            comboBox1.Enabled = false;
+            btnUpdate.Visible = true;
+            btnDelete.Visible = true;
+            btnEdit.Visible = false;
+            
         }
     }
 }

@@ -95,10 +95,11 @@ namespace DBClasses
         }
 
         // updates existing package record and returns bool success flag
-        [DataObjectMethod(DataObjectMethodType.Insert)]
+        
         public static bool UpdatePackage(Package old_pack, Package pack)
         {
             bool successful = false;
+            int count = 0;
             // prepare connection
             SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
 
@@ -107,22 +108,22 @@ namespace DBClasses
                                    "PkgName = @NewPkgName, " +
                                    "PkgStartDate = @NewPkgStartDate, " +
                                    "PkgEndDate = @NewPkgEndDate, " +
-                                   "PkgDesc = @NewPkgDesc ," +
-                                   "PkgBasePrice = @NewPkgBasePrice " +
+                                   "PkgDesc = @NewPkgDesc, " +
+                                   "PkgBasePrice = @NewPkgBasePrice, " +
                                    "PkgAgencyCommission = @NewPkgAgencyCommission " +
                                    "where " + // update succeeds only if record not changed by other users
                                    "PkgName  = @OldPkgName and " +
                                    "PkgStartDate = @OldPkgStartDate and " +
                                    "PkgEndDate = @OldPkgEndDate and " +
                                    "PkgDesc = @OldPkgDesc and " +
-                                   "PkgBasePrice = @OldPkgBasePrice " +
+                                   "PkgBasePrice = @OldPkgBasePrice and " +
                                    "PkgAgencyCommission = @OldPkgAgencyCommission";
             SqlCommand updateCommand = new SqlCommand(updateString, con);
             updateCommand.Parameters.AddWithValue("@OldPkgName", old_pack.PkgName);
             updateCommand.Parameters.AddWithValue("@OldPkgStartDate", old_pack.PkgStartDate);
             updateCommand.Parameters.AddWithValue("@OldPkgEndDate", old_pack.PkgEndDate);
             updateCommand.Parameters.AddWithValue("@OldPkgDesc", old_pack.PkgDesc);
-            updateCommand.Parameters.AddWithValue("@OldBasePrice", old_pack.PkgBasePrice);
+            updateCommand.Parameters.AddWithValue("@OldPkgBasePrice", old_pack.PkgBasePrice);
             updateCommand.Parameters.AddWithValue("@OldPkgAgencyCommission", old_pack.PkgAgencyCommission);
             updateCommand.Parameters.AddWithValue("@NewPkgName", pack.PkgName);
             updateCommand.Parameters.AddWithValue("@NewPkgStartDate", pack.PkgStartDate);
@@ -136,7 +137,7 @@ namespace DBClasses
                 // open connection
                 con.Open();
 
-                int count = updateCommand.ExecuteNonQuery();
+                count = updateCommand.ExecuteNonQuery();
                 if (count == 1)
                     successful = true;
                 
