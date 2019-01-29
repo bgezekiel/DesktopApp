@@ -82,7 +82,8 @@ namespace ThreadedProject2
 
 				}
 
-				int id = (int) new SqlCommand("SELECT CAST(IDENT_CURRENT('Packages') AS INT);", con).ExecuteScalar();
+				int id = (int)new SqlCommand("SELECT MAX(PackageId) FROM Packages;", con).ExecuteScalar();
+
 				List<int> ProductSupplierId = new List<int>();
 				using (SqlCommand cmd = new SqlCommand("SELECT SupplierId, ProductSupplierId FROM Products_Suppliers;", con)) {
 
