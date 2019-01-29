@@ -35,6 +35,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.BtnSuppliers = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+
             this.SuspendLayout();
             // 
             // btnViewPackages
@@ -45,11 +46,13 @@
             this.btnViewPackages.FlatAppearance.BorderSize = 5;
             this.btnViewPackages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(167)))), ((int)(((byte)(25)))));
             this.btnViewPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewPackages.Location = new System.Drawing.Point(12, 91);
+
+            this.btnViewPackages.Location = new System.Drawing.Point(101, 106);
             this.btnViewPackages.Name = "btnViewPackages";
-            this.btnViewPackages.Size = new System.Drawing.Size(194, 93);
+            this.btnViewPackages.Size = new System.Drawing.Size(230, 116);
             this.btnViewPackages.TabIndex = 0;
-            this.btnViewPackages.Text = "View Packages";
+            this.btnViewPackages.Text = "View/Edit Packages";
+
             this.btnViewPackages.UseVisualStyleBackColor = false;
             this.btnViewPackages.Click += new System.EventHandler(this.btnViewPackages_Click);
             // 
@@ -62,9 +65,11 @@
             this.btnAddPackages.FlatAppearance.BorderSize = 5;
             this.btnAddPackages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(167)))), ((int)(((byte)(25)))));
             this.btnAddPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPackages.Location = new System.Drawing.Point(12, 190);
+
+            this.btnAddPackages.Location = new System.Drawing.Point(468, 106);
             this.btnAddPackages.Name = "btnAddPackages";
-            this.btnAddPackages.Size = new System.Drawing.Size(194, 93);
+            this.btnAddPackages.Size = new System.Drawing.Size(251, 128);
+
             this.btnAddPackages.TabIndex = 1;
             this.btnAddPackages.Text = "Add / Create New Packages";
             this.btnAddPackages.UseVisualStyleBackColor = false;
@@ -76,7 +81,9 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Modern No. 20", 48F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(25)))));
-            this.lblTitle.Location = new System.Drawing.Point(282, 9);
+
+            this.lblTitle.Location = new System.Drawing.Point(200, 23);
+
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(410, 65);
             this.lblTitle.TabIndex = 2;
@@ -86,7 +93,9 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(23, 448);
+
+            this.button2.Location = new System.Drawing.Point(12, 448);
+
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 37);
             this.button2.TabIndex = 19;
@@ -94,6 +103,7 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+
             // BtnSuppliers
             // 
             this.BtnSuppliers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
@@ -119,6 +129,7 @@
             this.richTextBox1.TabIndex = 21;
             this.richTextBox1.Text = "";
             // 
+
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,8 +138,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(796, 497);
+
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.BtnSuppliers);
+
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnAddPackages);
@@ -149,8 +162,10 @@
         private System.Windows.Forms.Button btnAddPackages;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button button2;
+
 		private System.Windows.Forms.Button BtnSuppliers;
         private System.Windows.Forms.RichTextBox richTextBox1;
+
     }
 }
 
