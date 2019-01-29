@@ -31,24 +31,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPackages));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dtEnd = new System.Windows.Forms.DateTimePicker();
             this.dtStart = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.lblViewPackages = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPackageName = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.lblViewProducts = new System.Windows.Forms.Label();
-            this.lblViewPackages = new System.Windows.Forms.Label();
             this.lstPackageProducts = new System.Windows.Forms.ListBox();
             this.lblPackages = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +71,8 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.btnDelete);
+            this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnBack);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -81,16 +85,6 @@
             this.groupBox1.Size = new System.Drawing.Size(794, 454);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(6, 240);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(372, 64);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
             // 
             // button2
             // 
@@ -137,6 +131,16 @@
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(6, 240);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(372, 64);
+            this.richTextBox1.TabIndex = 19;
+            this.richTextBox1.Text = "";
+            // 
             // dtEnd
             // 
             this.dtEnd.Location = new System.Drawing.Point(143, 145);
@@ -173,17 +177,6 @@
             this.comboBox1.TabIndex = 16;
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(514, 381);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(172, 48);
-            this.btnEdit.TabIndex = 15;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            // 
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -201,6 +194,18 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(235, 29);
             this.txtName.TabIndex = 12;
+            // 
+            // lblViewPackages
+            // 
+            this.lblViewPackages.AutoSize = true;
+            this.lblViewPackages.BackColor = System.Drawing.Color.Transparent;
+            this.lblViewPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewPackages.ForeColor = System.Drawing.Color.Khaki;
+            this.lblViewPackages.Location = new System.Drawing.Point(5, 217);
+            this.lblViewPackages.Name = "lblViewPackages";
+            this.lblViewPackages.Size = new System.Drawing.Size(100, 20);
+            this.lblViewPackages.TabIndex = 5;
+            this.lblViewPackages.Text = "Description";
             // 
             // label5
             // 
@@ -235,6 +240,17 @@
             this.lblPackageName.TabIndex = 7;
             this.lblPackageName.Text = "Package Name : ";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(245, 27);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(147, 35);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            // 
             // lblViewProducts
             // 
             this.lblViewProducts.AutoSize = true;
@@ -246,18 +262,6 @@
             this.lblViewProducts.Size = new System.Drawing.Size(172, 20);
             this.lblViewProducts.TabIndex = 6;
             this.lblViewProducts.Text = "Products in package";
-            // 
-            // lblViewPackages
-            // 
-            this.lblViewPackages.AutoSize = true;
-            this.lblViewPackages.BackColor = System.Drawing.Color.Transparent;
-            this.lblViewPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblViewPackages.ForeColor = System.Drawing.Color.Khaki;
-            this.lblViewPackages.Location = new System.Drawing.Point(5, 217);
-            this.lblViewPackages.Name = "lblViewPackages";
-            this.lblViewPackages.Size = new System.Drawing.Size(100, 20);
-            this.lblViewPackages.TabIndex = 5;
-            this.lblViewPackages.Text = "Description";
             // 
             // lstPackageProducts
             // 
@@ -281,6 +285,28 @@
             this.lblPackages.Size = new System.Drawing.Size(162, 42);
             this.lblPackages.TabIndex = 3;
             this.lblPackages.Text = "Packages";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(417, 388);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(147, 35);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(612, 388);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(147, 35);
+            this.btnDelete.TabIndex = 20;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // ViewPackages
             // 
@@ -329,5 +355,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtEnd;
         private System.Windows.Forms.DateTimePicker dtStart;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
