@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 /**
  * Project: OOSD Threaded Project 2
@@ -92,5 +93,65 @@ namespace DBClasses
             }
             return pack; // returns list of packages name to pack list object
         }
+
+        // updates existing package record and returns bool success flag
+        [DataObjectMethod(DataObjectMethodType.Insert)]
+        public static bool UpdatePackage(Package old_pack, Package pack)
+        {
+            bool successful = false;
+            // prepare connection
+            SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
+
+            // prepare the SQL statement
+            string updateString = "update Packages set " +
+                                   "PkgName = @NewPkgName, " +
+                                   "PkgStartDate = @NewPkgStartDate, " +
+                                   "PkgEndDate = @NewPkgEndDate, " +
+                                   "PkgDesc = @NewPkgDesc ," +
+                                   "PkgBasePrice = @NewPkgBasePrice " +
+                                   "PkgAgencyCommission = @NewPkgAgencyCommission " +
+                                   "where " + // update succeeds only if record not changed by other users
+                                   "PkgName  = @OldPkgName and " +
+                                   "PkgStartDate = @OldPkgStartDate and " +
+                                   "PkgEndDate = @OldPkgEndDate and " +
+                                   "PkgDesc = @OldPkgDesc and " +
+                                   "PkgBasePrice = @OldPkgBasePrice " +
+                                   "PkgAgencyCommission = @OldPkgAgencyCommission";
+            SqlCommand updateCommand = new SqlCommand(updateString, con);
+            updateCommand.Parameters.AddWithValue("@OldPkgName", old_pack.PkgName);
+            updateCommand.Parameters.AddWithValue("@OldPkgStartDate", old_pack.PkgStartDate);
+            updateCommand.Parameters.AddWithValue("@OldPkgEndDate", old_pack.PkgEndDate);
+            updateCommand.Parameters.AddWithValue("@OldPkgDesc", old_pack.PkgDesc);
+            updateCommand.Parameters.AddWithValue("@OldBasePrice", old_pack.PkgBasePrice);
+            updateCommand.Parameters.AddWithValue("@OldPkgAgencyCommission", old_pack.PkgAgencyCommission);
+            updateCommand.Parameters.AddWithValue("@NewPkgName", pack.PkgName);
+            updateCommand.Parameters.AddWithValue("@NewPkgStartDate", pack.PkgStartDate);
+            updateCommand.Parameters.AddWithValue("@NewPkgEndDate", pack.PkgEndDate);
+            updateCommand.Parameters.AddWithValue("@NewPkgDesc", pack.PkgDesc);
+            updateCommand.Parameters.AddWithValue("@NewPkgBasePrice", pack.PkgBasePrice);
+            updateCommand.Parameters.AddWithValue("@NewPkgAgencyCommission", pack.PkgAgencyCommission);
+
+            try
+            {
+                // open connection
+                con.Open();
+
+                int count = updateCommand.ExecuteNonQuery();
+                if (count == 1)
+                    successful = true;
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return successful;
+
+        }
+
     }
 }
