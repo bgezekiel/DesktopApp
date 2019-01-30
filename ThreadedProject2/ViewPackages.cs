@@ -138,6 +138,17 @@ namespace ThreadedProject2
                 MessageBox.Show("Update Successful!");
 
                 GetPackages();
+                comboBox1.Enabled = true;
+                comboBox1.Focus();
+                txtName.Enabled = false;
+                dtStart.Enabled = false;
+                dtEnd.Enabled = false;
+                txtPrice.Enabled = false;
+                richTextBox1.Enabled = false;
+                lstPackageProducts.Enabled = false;
+                btnUpdate.Visible = false;
+                btnDelete.Visible = false;
+
             }
             else
             {
