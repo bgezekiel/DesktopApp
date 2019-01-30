@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNewSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddNewSupplier.Designer.cs">
-      <DependentUpon>AddNewSupplier.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +57,12 @@
     </Compile>
     <Compile Include="CreateNewPackage.Designer.cs">
       <DependentUpon>CreateNewPackage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateProducts.Designer.cs">
+      <DependentUpon>CreateProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -84,14 +84,14 @@
     <Compile Include="ViewPackages.Designer.cs">
       <DependentUpon>ViewPackages.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddNewSupplier.resx">
-      <DependentUpon>AddNewSupplier.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddSuppliers.resx">
       <DependentUpon>AddSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateNewPackage.resx">
       <DependentUpon>CreateNewPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateProducts.resx">
+      <DependentUpon>CreateProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

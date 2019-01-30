@@ -82,9 +82,9 @@
             this.groupBox1.Controls.Add(this.lblViewProducts);
             this.groupBox1.Controls.Add(this.lstPackageProducts);
             this.groupBox1.Controls.Add(this.lblPackages);
-            this.groupBox1.Location = new System.Drawing.Point(3, -3);
+            this.groupBox1.Location = new System.Drawing.Point(-5, -7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(794, 454);
+            this.groupBox1.Size = new System.Drawing.Size(820, 485);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -101,9 +101,9 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(612, 388);
+            this.btnDelete.Location = new System.Drawing.Point(612, 405);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(147, 35);
+            this.btnDelete.Size = new System.Drawing.Size(147, 48);
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -113,9 +113,9 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(417, 388);
+            this.btnUpdate.Location = new System.Drawing.Point(417, 405);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(168, 35);
+            this.btnUpdate.Size = new System.Drawing.Size(168, 48);
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "Update/Save";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -125,7 +125,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(220, 381);
+            this.button2.Location = new System.Drawing.Point(220, 405);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 48);
             this.button2.TabIndex = 18;
@@ -137,7 +137,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(20, 381);
+            this.btnBack.Location = new System.Drawing.Point(14, 405);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(172, 48);
             this.btnBack.TabIndex = 17;
@@ -327,7 +327,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(815, 475);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

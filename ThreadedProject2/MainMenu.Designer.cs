@@ -44,9 +44,9 @@
             this.btnViewPackages.FlatAppearance.BorderSize = 5;
             this.btnViewPackages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(167)))), ((int)(((byte)(25)))));
             this.btnViewPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewPackages.Location = new System.Drawing.Point(101, 106);
+            this.btnViewPackages.Location = new System.Drawing.Point(291, 181);
             this.btnViewPackages.Name = "btnViewPackages";
-            this.btnViewPackages.Size = new System.Drawing.Size(230, 116);
+            this.btnViewPackages.Size = new System.Drawing.Size(220, 130);
             this.btnViewPackages.TabIndex = 0;
             this.btnViewPackages.Text = "View/Edit Packages";
             this.btnViewPackages.UseVisualStyleBackColor = false;
@@ -61,7 +61,7 @@
             this.btnAddPackages.FlatAppearance.BorderSize = 5;
             this.btnAddPackages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(167)))), ((int)(((byte)(25)))));
             this.btnAddPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPackages.Location = new System.Drawing.Point(468, 106);
+            this.btnAddPackages.Location = new System.Drawing.Point(12, 180);
             this.btnAddPackages.Name = "btnAddPackages";
             this.btnAddPackages.Size = new System.Drawing.Size(251, 128);
             this.btnAddPackages.TabIndex = 1;
@@ -102,11 +102,11 @@
             this.BtnSuppliers.FlatAppearance.BorderSize = 5;
             this.BtnSuppliers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(167)))), ((int)(((byte)(25)))));
             this.BtnSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSuppliers.Location = new System.Drawing.Point(468, 280);
+            this.BtnSuppliers.Location = new System.Drawing.Point(528, 180);
             this.BtnSuppliers.Name = "BtnSuppliers";
-            this.BtnSuppliers.Size = new System.Drawing.Size(251, 128);
+            this.BtnSuppliers.Size = new System.Drawing.Size(256, 132);
             this.BtnSuppliers.TabIndex = 20;
-            this.BtnSuppliers.Text = "Create / Modify / Delete Suppliers";
+            this.BtnSuppliers.Text = "Create / Modify / Delete Suppliers and Products";
             this.BtnSuppliers.UseVisualStyleBackColor = false;
             this.BtnSuppliers.Click += new System.EventHandler(this.BtnSuppliers_Click);
             // 

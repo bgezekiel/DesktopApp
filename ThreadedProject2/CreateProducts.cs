@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ThreadedProject2
 {
-    public partial class AddNewSupplier : Form
+    public partial class CreateProducts : Form
     {
-        public AddNewSupplier()
+        public CreateProducts()
         {
             InitializeComponent();
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
