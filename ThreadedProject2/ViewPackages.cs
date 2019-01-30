@@ -148,6 +148,7 @@ namespace ThreadedProject2
                 lstPackageProducts.Enabled = false;
                 btnUpdate.Visible = false;
                 btnDelete.Visible = false;
+                btnEdit.Visible = true;
 
             }
             else
