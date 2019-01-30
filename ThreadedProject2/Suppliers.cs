@@ -141,5 +141,10 @@ namespace ThreadedProject2
         {
             Application.Exit();
         }
+
+        private void BtnCreate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

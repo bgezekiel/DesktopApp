@@ -58,17 +58,17 @@
     <Compile Include="CreateNewPackage.Designer.cs">
       <DependentUpon>CreateNewPackage.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateProducts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateProducts.Designer.cs">
-      <DependentUpon>CreateProducts.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManagement.Designer.cs">
+      <DependentUpon>ProductManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,11 +90,11 @@
     <EmbeddedResource Include="CreateNewPackage.resx">
       <DependentUpon>CreateNewPackage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateProducts.resx">
-      <DependentUpon>CreateProducts.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManagement.resx">
+      <DependentUpon>ProductManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ThreadedProject2
 {
-    public partial class CreateProducts : Form
+    public partial class ProductManagement : Form
     {
-        public CreateProducts()
+        public ProductManagement()
         {
             InitializeComponent();
+        }
+
+        private void btnExitApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

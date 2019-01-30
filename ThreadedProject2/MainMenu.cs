@@ -55,5 +55,10 @@ namespace ThreadedProject2
         {
             new Suppliers().ShowDialog(this);
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            new ProductManagement().ShowDialog(this);
+        }
     }
 }
