@@ -107,6 +107,7 @@ namespace ThreadedProject2
                 pack = ViewPackagesDB.GetPackage(comboBox1.Text);
                 packages = pack;
 
+                txtId.Text = pack.PackageId.ToString();
                 txtName.Text = pack.PkgName.ToString();
                 dtStart.Value = pack.PkgStartDate;
                 dtEnd.Value = pack.PkgEndDate;
@@ -145,6 +146,33 @@ namespace ThreadedProject2
             }
 
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Package delete = new Package();
+            //delete.PackageId = Convert.ToInt32(txtId.Text);
+            delete.PkgName = txtName.Text;
+            delete.PkgStartDate = dtStart.Value;
+            delete.PkgEndDate = dtEnd.Value;
+            delete.PkgBasePrice = Convert.ToDecimal(txtPrice.Text.Substring(1));
+            delete.PkgDesc = richTextBox1.Text;
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete package?", "Delete", MessageBoxButtons.YesNo);
+
+            bool deleted = false;
+            deleted = ViewPackagesDB.DeletePackage(delete);
+            if (deleted)
+            {
+                MessageBox.Show("Delete Successful!");
+
+                GetPackages();
+            }
+            else
+            {
+                MessageBox.Show("Error. Try Again.");
+
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

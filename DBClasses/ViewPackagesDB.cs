@@ -154,5 +154,48 @@ namespace DBClasses
 
         }
 
+        static public bool DeletePackage(Package package)
+        {
+            bool successful = false;
+            int count = 0;
+            SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
+
+            string deleteString = "delete from Packages " +
+                                  "where " +
+                                  //"PakageId = @PackageId and " +
+                                  "PkgName = @PkgName and " +
+                                  "PkgStartDate = @PkgStartDate and " +
+                                  "PkgEndDate = @PkgEndDate and " +
+                                  "PkgBasePrice = @PkgBasePrice and " +
+                                  "PkgDesc = @PkgDesc and " +
+                                  "PkgAgencyCommission = @PkgAgencyCommission";
+            SqlCommand deleteCommand = new SqlCommand(deleteString, con);
+            //deleteCommand.Parameters.AddWithValue("@PackageId", package.PackageId);
+            deleteCommand.Parameters.AddWithValue("@PkgName", package.PkgName);
+            deleteCommand.Parameters.AddWithValue("@PkgStartDate", package.PkgStartDate);
+            deleteCommand.Parameters.AddWithValue("@PkgEndDate", package.PkgEndDate);
+            deleteCommand.Parameters.AddWithValue("@PkgBasePrice", package.PkgBasePrice);
+            deleteCommand.Parameters.AddWithValue("@PkgDesc", package.PkgDesc);
+            deleteCommand.Parameters.AddWithValue("@PkgAgencyCommission", package.PkgAgencyCommission);
+
+            try
+            {
+                con.Open();
+                count = deleteCommand.ExecuteNonQuery();
+                if (count == 1)
+                    successful = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return successful;
+
+
+        }
     }
 }
