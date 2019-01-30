@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 /**
  * Project: OOSD Threaded Project 2
-* Package class with getters and setters
+* Products class with getters and setters
 * Author: Brandon Ezekiel
 * Date: Jan 2019
 * Commenter: Brandon Ezekiel
