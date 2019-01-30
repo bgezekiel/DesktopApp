@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPackages));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.lblViewProducts = new System.Windows.Forms.Label();
             this.lstPackageProducts = new System.Windows.Forms.ListBox();
             this.lblPackages = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,15 @@
             this.groupBox1.Size = new System.Drawing.Size(794, 454);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(684, 15);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(104, 29);
+            this.txtId.TabIndex = 21;
             // 
             // btnDelete
             // 
@@ -312,15 +321,6 @@
             this.lblPackages.Size = new System.Drawing.Size(162, 42);
             this.lblPackages.TabIndex = 3;
             this.lblPackages.Text = "Packages";
-            // 
-            // txtId
-            // 
-            this.txtId.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(684, 15);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(104, 29);
-            this.txtId.TabIndex = 21;
             // 
             // ViewPackages
             // 
