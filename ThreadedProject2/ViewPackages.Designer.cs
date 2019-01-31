@@ -49,9 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblPackageName = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.lblViewProducts = new System.Windows.Forms.Label();
-            this.lstPackageProducts = new System.Windows.Forms.ListBox();
             this.lblPackages = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +71,7 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnUpdate);
@@ -79,12 +79,10 @@
             this.groupBox1.Controls.Add(this.btnBack);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnEdit);
-            this.groupBox1.Controls.Add(this.lblViewProducts);
-            this.groupBox1.Controls.Add(this.lstPackageProducts);
             this.groupBox1.Controls.Add(this.lblPackages);
             this.groupBox1.Location = new System.Drawing.Point(-5, -7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(820, 485);
+            this.groupBox1.Size = new System.Drawing.Size(586, 482);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -92,18 +90,18 @@
             // 
             this.txtId.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(684, 15);
+            this.txtId.Location = new System.Drawing.Point(538, 9);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(104, 29);
+            this.txtId.Size = new System.Drawing.Size(42, 29);
             this.txtId.TabIndex = 21;
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(612, 405);
+            this.btnDelete.Location = new System.Drawing.Point(398, 327);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(147, 48);
+            this.btnDelete.Size = new System.Drawing.Size(168, 48);
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -113,7 +111,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(417, 405);
+            this.btnUpdate.Location = new System.Drawing.Point(398, 72);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(168, 48);
             this.btnUpdate.TabIndex = 19;
@@ -206,7 +204,7 @@
             this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(116, 23);
+            this.comboBox1.Location = new System.Drawing.Point(121, 23);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(253, 32);
             this.comboBox1.TabIndex = 16;
@@ -279,36 +277,13 @@
             // 
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(245, 27);
+            this.btnEdit.Location = new System.Drawing.Point(180, 31);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(147, 35);
             this.btnEdit.TabIndex = 15;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // lblViewProducts
-            // 
-            this.lblViewProducts.AutoSize = true;
-            this.lblViewProducts.BackColor = System.Drawing.Color.Transparent;
-            this.lblViewProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblViewProducts.ForeColor = System.Drawing.Color.Khaki;
-            this.lblViewProducts.Location = new System.Drawing.Point(413, 42);
-            this.lblViewProducts.Name = "lblViewProducts";
-            this.lblViewProducts.Size = new System.Drawing.Size(172, 20);
-            this.lblViewProducts.TabIndex = 6;
-            this.lblViewProducts.Text = "Products in package";
-            // 
-            // lstPackageProducts
-            // 
-            this.lstPackageProducts.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lstPackageProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstPackageProducts.FormattingEnabled = true;
-            this.lstPackageProducts.ItemHeight = 16;
-            this.lstPackageProducts.Location = new System.Drawing.Point(417, 65);
-            this.lstPackageProducts.Name = "lstPackageProducts";
-            this.lstPackageProducts.Size = new System.Drawing.Size(342, 308);
-            this.lstPackageProducts.TabIndex = 4;
             // 
             // lblPackages
             // 
@@ -322,12 +297,24 @@
             this.lblPackages.TabIndex = 3;
             this.lblPackages.Text = "Packages";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(398, 146);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(168, 48);
+            this.btnCancel.TabIndex = 22;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // ViewPackages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(815, 475);
+            this.ClientSize = new System.Drawing.Size(579, 475);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -349,9 +336,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblPackages;
-        private System.Windows.Forms.ListBox lstPackageProducts;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label lblViewProducts;
         private System.Windows.Forms.Label lblViewPackages;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtName;
@@ -372,5 +357,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

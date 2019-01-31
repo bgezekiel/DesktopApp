@@ -13,9 +13,9 @@ using System.ComponentModel;
 * ViewPackages Form with navigation buttons. This page is for displaying package information for
 * easier read and access
 * 
-* Author: Bradon Ezekiel / Eugenia Chiu
+* Author: Brandon Ezekiel / Eugenia Chiu
 * Date: Jan 2019
-* Commenter: Bradon Ezekiel / Eugenia Chiu
+* Commenter: Brandon Ezekiel / Eugenia Chiu
 */
 
 namespace DBClasses
