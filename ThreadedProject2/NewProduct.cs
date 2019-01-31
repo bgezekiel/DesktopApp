@@ -16,6 +16,9 @@ namespace ThreadedProject2
         public NewProduct()
         {
             InitializeComponent();
+
+			btnOK.Enabled = false;
+			btnOK.BackColor = CreateNewPackage.ColorDisabled;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -23,11 +26,21 @@ namespace ThreadedProject2
             string name = txtProdName.Text.ToString();
             int i = ProductsDB.AddNewProduct(name.ToUpper());
 
-            KeyValuePair<string, int> val = new KeyValuePair<string, int>(name.ToUpper(), i);
+            KeyValuePair<string, int> val = new KeyValuePair<string, int>(name, i);
             ProductsDB.Products.Add(val);
 
             MessageBox.Show("Created new product.", "Success");
             this.Close();
         }
-    }
+
+		private void ChangeText(object sender, EventArgs e) {
+			if(txtProdName.Text.Length == 0) {
+				btnOK.Enabled = false;
+				btnOK.BackColor = CreateNewPackage.ColorDisabled;
+			} else {
+				btnOK.Enabled = true;
+				btnOK.BackColor = CreateNewPackage.ColorEnabled;
+			}
+		}
+	}
 }

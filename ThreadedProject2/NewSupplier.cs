@@ -26,7 +26,10 @@ namespace ThreadedProject2
         public NewSupplier()
         {
             InitializeComponent();
-        }
+
+			btnOK.Enabled = false;
+			btnOK.BackColor = CreateNewPackage.ColorDisabled;
+		}
 
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -39,5 +42,15 @@ namespace ThreadedProject2
             MessageBox.Show("Created new supplier.", "Success");
             this.Close();
         }
-    }
+
+		private void ChangeText(object sender, EventArgs e) {
+			if (txtSupName.Text.Length == 0) {
+				btnOK.Enabled = false;
+				btnOK.BackColor = CreateNewPackage.ColorDisabled;
+			} else {
+				btnOK.Enabled = true;
+				btnOK.BackColor = CreateNewPackage.ColorEnabled;
+			}
+		}
+	}
 }

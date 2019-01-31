@@ -31,8 +31,8 @@ namespace ThreadedProject2
 
 		private static readonly KeyValuePair<string, int> DummyVal = new KeyValuePair<string, int>("ERR", -999);
 
-		private static readonly Color ColorEnabled = Color.FromArgb(82, 117, 167);
-		private static readonly Color ColorDisabled = Color.Gray;
+		public static readonly Color ColorEnabled = Color.FromArgb(82, 117, 167);
+		public static readonly Color ColorDisabled = Color.Gray;
 
         public CreateNewPackage()
         {

@@ -73,17 +73,13 @@ namespace DBClasses {
             {
                 con.Open();
 
-                int id = (int)new SqlCommand("SELECT MAX(ProductId)+1 FROM Products;", con).ExecuteScalar();
-                id++;
+                int id = (int)new SqlCommand("SELECT CAST(IDENT_CURRENT('Products')+1 AS INT);", con).ExecuteScalar();
 
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Products (ProductId, ProdName) VALUES (@sid, @name);", con))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Products (ProdName) VALUES (@name);", con))
                 {
-                    cmd.Parameters.AddWithValue("@sid", id);
                     cmd.Parameters.AddWithValue("@name", productName);
-
- /////////////////////// THIS IS THE PART THAT THROWS AN ERROR!
  
-                    //cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
                 }
                 return id;
             }
