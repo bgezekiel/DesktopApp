@@ -73,7 +73,7 @@ namespace ThreadedProject2
                     //sql Command
                     string sqlCommand = "SELECT * FROM Products PD FULL OUTER JOIN Products_Suppliers PS ON " +
                                         "PS.ProductId = PD.ProductId FULL OUTER JOIN Suppliers SP ON " +
-                                        "SP.SupplierId = PS.SupplierId WHERE PS.ProductId = @supp;";
+                                        "SP.SupplierId = PS.SupplierId WHERE PS.SupplierId = @supp;";
 
                     //using the connection and the string command,
                     using (SqlCommand cmd = new SqlCommand(sqlCommand, con))
@@ -94,8 +94,6 @@ namespace ThreadedProject2
                         }
                     }
                 }
-
-
 
                 foreach (KeyValuePair<string, int> kva in SelectedList)
                 {
