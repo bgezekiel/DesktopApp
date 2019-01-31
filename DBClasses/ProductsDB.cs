@@ -90,50 +90,21 @@ namespace DBClasses {
         {
             using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
             {
-
                 con.Open();
                 DialogResult dr = MessageBox.Show("WARNING:\n" +
-                    "Are you sure you want to delete this product?\n" + 
-                    "This will also delete the products that are bound to the Supplier !!" +
-                    "Are you sure you still want to delete? \nContinue?", "Confirm Delete", MessageBoxButtons.YesNo);
+                    "Are you sure you want to delete this product from the products list? ." +
+                    "\nContinue?", "Confirm Delete", MessageBoxButtons.YesNo);
 
                 if (dr == DialogResult.Yes)
                 {
-
-                    //This queries are found in DBClasses.SupDelStatements as they are VERY long queries.
-                    //Clear - Packages_Products_Suppliers
-                    SqlCommand cmdPPS = new SqlCommand(SupDelStatements.PSS_Query, con);
-                    cmdPPS.Parameters.AddWithValue("@sid", id);
-                    cmdPPS.ExecuteNonQuery();
-
-                    //Clear - BookingDetails
-                    SqlCommand cmdBD = new SqlCommand(SupDelStatements.BD_Query, con);
-                    cmdBD.Parameters.AddWithValue("@sid", id);
-                    cmdBD.ExecuteNonQuery();
-
-                    //Clear - Products_Suppliers
-                    SqlCommand cmdPS = new SqlCommand(SupDelStatements.PS_Query, con);
-                    cmdPS.Parameters.AddWithValue("@sid", id);
-                    cmdPS.ExecuteNonQuery();
-
-                    //Clear - SupplierContacts
-                    SqlCommand cmdSC = new SqlCommand(SupDelStatements.SC_Query, con);
-                    cmdSC.Parameters.AddWithValue("@sid", id);
-                    cmdSC.ExecuteNonQuery();
-
-                    //Clear - Suppliers
-                    SqlCommand cmdS = new SqlCommand(SupDelStatements.S_Query, con);
-                    cmdS.Parameters.AddWithValue("@sid", id);
-                    cmdS.ExecuteNonQuery();
-
-                    MessageBox.Show("Deleted supplier.", "Success");
+                   
                     return true;
-
                 }
                 else
                 {
                     return false;
                 }
+
             }
         }
     }
