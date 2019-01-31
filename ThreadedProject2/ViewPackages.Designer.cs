@@ -106,6 +106,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(42, 29);
             this.txtId.TabIndex = 21;
+            this.txtId.Visible = false;
             // 
             // btnDelete
             // 
