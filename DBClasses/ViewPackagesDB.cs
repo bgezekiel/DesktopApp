@@ -157,7 +157,7 @@ namespace DBClasses
         static public bool DeletePackage(Package package)
         {
             bool successful = false;
-            int count = 0;
+            
             SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
 
 
@@ -179,9 +179,8 @@ namespace DBClasses
             try
             {
                 con.Open();
-                count = deleteCommand.ExecuteNonQuery();
-                if (count == 1)
-                    successful = true;
+                successful = Convert.ToBoolean(deleteCommand.ExecuteNonQuery());
+                
             }
             catch (Exception ex)
             {
