@@ -36,6 +36,10 @@ namespace ThreadedProject2
             LBSuppliers.ValueMember = "Value";
             LBSuppliers.DisplayMember = "Key";
             LBSuppliers.DataSource = SuppliersDB.SuppliersBindingSource;
+
+            LBProducts.ValueMember = "Value";
+            LBProducts.DisplayMember = "Key";
+            LBProducts.DataSource = ProductsDB.ProductsBindingSource;
         }
 
         private void DeleteSupplier(object sender, EventArgs e)
@@ -63,7 +67,7 @@ namespace ThreadedProject2
 
         private void btnCreateProduct_Click(object sender, EventArgs e)
         {
-            
+            new NewProduct().ShowDialog(this);
         }
     }
 }

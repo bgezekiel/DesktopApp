@@ -13,7 +13,7 @@ using System.Windows.Forms;
 * ProductsDB class binds the data retrieved from the database to a KeyValue pair List
 * and allows for display by binding data to list.
 * 
-* Author: Hayden Belanger
+* Author: Hayden Belanger + Eugenia Chiu
 * Date: Jan 2019
 * Commenter: Eugenia Chiu and Hayden Belanger
 */
@@ -65,5 +65,29 @@ namespace DBClasses {
             //Make the filled list the ProductsBindingSource (for later use)
 			ProductsBindingSource.DataSource = Products;
 		}
-	}
+
+        //Method for adding new product 
+        public static int AddNewProduct(string productName)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
+            {
+                con.Open();
+
+                int id = (int)new SqlCommand("SELECT MAX(ProductId)+1 FROM Products;", con).ExecuteScalar();
+                id++;
+
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Products (ProductId, ProdName) VALUES (@sid, @name);", con))
+                {
+                    cmd.Parameters.AddWithValue("@sid", id);
+                    cmd.Parameters.AddWithValue("@name", productName);
+
+ /////////////////////// THIS IS THE PART THAT THROWS AN ERROR!
+ 
+                    //cmd.ExecuteNonQuery();
+                }
+                return id;
+            }
+
+        }
+    }
 }

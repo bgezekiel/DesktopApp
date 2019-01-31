@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lstProducts = new System.Windows.Forms.ListBox();
+            this.LBProducts = new System.Windows.Forms.ListBox();
             this.btnCreateProduct = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -128,7 +128,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.lstProducts);
+            this.groupBox2.Controls.Add(this.LBProducts);
             this.groupBox2.Controls.Add(this.btnCreateProduct);
             this.groupBox2.Location = new System.Drawing.Point(37, 54);
             this.groupBox2.Name = "groupBox2";
@@ -147,14 +147,14 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Products List";
             // 
-            // lstProducts
+            // LBProducts
             // 
-            this.lstProducts.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lstProducts.FormattingEnabled = true;
-            this.lstProducts.Location = new System.Drawing.Point(16, 45);
-            this.lstProducts.Name = "lstProducts";
-            this.lstProducts.Size = new System.Drawing.Size(333, 342);
-            this.lstProducts.TabIndex = 4;
+            this.LBProducts.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.LBProducts.FormattingEnabled = true;
+            this.LBProducts.Location = new System.Drawing.Point(16, 45);
+            this.LBProducts.Name = "LBProducts";
+            this.LBProducts.Size = new System.Drawing.Size(333, 342);
+            this.LBProducts.TabIndex = 4;
             // 
             // btnCreateProduct
             // 
@@ -204,7 +204,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lstProducts;
+        private System.Windows.Forms.ListBox LBProducts;
         private System.Windows.Forms.Button btnCreateProduct;
     }
 }
