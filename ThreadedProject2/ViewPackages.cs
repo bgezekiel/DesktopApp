@@ -69,9 +69,9 @@ namespace ThreadedProject2
             dtEnd.Enabled = false;
             txtPrice.Enabled = false;
             richTextBox1.Enabled = false;
-            lstPackageProducts.Enabled = false;
             btnUpdate.Visible = false;
             btnDelete.Visible = false;
+            btnCancel.Visible = false;
         }
 
         // closes the window and to return to home window
@@ -145,7 +145,6 @@ namespace ThreadedProject2
                 dtEnd.Enabled = false;
                 txtPrice.Enabled = false;
                 richTextBox1.Enabled = false;
-                lstPackageProducts.Enabled = false;
                 btnUpdate.Visible = false;
                 btnDelete.Visible = false;
                 btnEdit.Visible = true;
@@ -163,7 +162,7 @@ namespace ThreadedProject2
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Package delete = new Package();
-            //delete.PackageId = Convert.ToInt32(txtId.Text);
+            delete.PackageId = Convert.ToInt32(txtId.Text);
             delete.PkgName = txtName.Text;
             delete.PkgStartDate = dtStart.Value;
             delete.PkgEndDate = dtEnd.Value;
@@ -179,11 +178,22 @@ namespace ThreadedProject2
                 MessageBox.Show("Delete Successful!");
 
                 GetPackages();
+                comboBox1.Enabled = true;
+                comboBox1.Focus();
+                txtName.Enabled = false;
+                dtStart.Enabled = false;
+                dtEnd.Enabled = false;
+                txtPrice.Enabled = false;
+                richTextBox1.Enabled = false;
+                btnUpdate.Visible = false;
+                btnDelete.Visible = false;
+                btnEdit.Visible = true;
+                btnCancel.Visible = false;
+
             }
             else
             {
                 MessageBox.Show("Error. Try Again.");
-
             }
         }
 
@@ -194,12 +204,28 @@ namespace ThreadedProject2
             dtEnd.Enabled = true;
             txtPrice.Enabled = true;
             richTextBox1.Enabled = true;
-            lstPackageProducts.Enabled = true;
             comboBox1.Enabled = false;
             btnUpdate.Visible = true;
             btnDelete.Visible = true;
             btnEdit.Visible = false;
+            btnCancel.Visible = true;
             
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            GetPackages();
+            comboBox1.Enabled = true;
+            comboBox1.Focus();
+            txtName.Enabled = false;
+            dtStart.Enabled = false;
+            dtEnd.Enabled = false;
+            txtPrice.Enabled = false;
+            richTextBox1.Enabled = false;
+            btnUpdate.Visible = false;
+            btnDelete.Visible = false;
+            btnEdit.Visible = true;
+            btnCancel.Visible = false;
         }
     }
 }

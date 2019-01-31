@@ -242,5 +242,10 @@ namespace ThreadedProject2
 
 			MessageBox.Show("Created new package: \"" + txtPackageName.Text + "\"", "Success");
 		}
-	}
+
+        private void comboBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

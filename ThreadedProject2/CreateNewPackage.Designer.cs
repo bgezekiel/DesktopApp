@@ -104,6 +104,7 @@
             this.comboBoxProducts.Name = "comboBoxProducts";
             this.comboBoxProducts.Size = new System.Drawing.Size(298, 21);
             this.comboBoxProducts.TabIndex = 1;
+            this.comboBoxProducts.SelectedIndexChanged += new System.EventHandler(this.comboBoxProducts_SelectedIndexChanged);
             this.comboBoxProducts.SelectedValueChanged += new System.EventHandler(this.SelectValChanged);
             // 
             // lstSuppliers
