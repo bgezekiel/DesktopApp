@@ -160,23 +160,21 @@ namespace DBClasses
             int count = 0;
             SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
 
-            string deleteString = "delete from Packages " +
+
+
+
+
+            string deleteString = "delete from packages_products_suppliers " +
+                                   "where " +
+                                   "PackageId = @PackageId;" +
+
+                                  "delete from Packages " +
                                   "where " +
-                                  //"PakageId = @PackageId and " +
-                                  "PkgName = @PkgName and " +
-                                  "PkgStartDate = @PkgStartDate and " +
-                                  "PkgEndDate = @PkgEndDate and " +
-                                  "PkgBasePrice = @PkgBasePrice and " +
-                                  "PkgDesc = @PkgDesc and " +
-                                  "PkgAgencyCommission = @PkgAgencyCommission";
+                                  "PackageId = @PackageId";
+                                 
             SqlCommand deleteCommand = new SqlCommand(deleteString, con);
-            //deleteCommand.Parameters.AddWithValue("@PackageId", package.PackageId);
-            deleteCommand.Parameters.AddWithValue("@PkgName", package.PkgName);
-            deleteCommand.Parameters.AddWithValue("@PkgStartDate", package.PkgStartDate);
-            deleteCommand.Parameters.AddWithValue("@PkgEndDate", package.PkgEndDate);
-            deleteCommand.Parameters.AddWithValue("@PkgBasePrice", package.PkgBasePrice);
-            deleteCommand.Parameters.AddWithValue("@PkgDesc", package.PkgDesc);
-            deleteCommand.Parameters.AddWithValue("@PkgAgencyCommission", package.PkgAgencyCommission);
+            deleteCommand.Parameters.AddWithValue("@PackageId", package.PackageId);
+            
 
             try
             {
