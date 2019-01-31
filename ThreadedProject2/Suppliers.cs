@@ -42,14 +42,6 @@ namespace ThreadedProject2
             LBProducts.DataSource = ProductsDB.ProductsBindingSource;
         }
 
-        private void DeleteSupplier(object sender, EventArgs e)
-        {
-            bool res = SuppliersDB.DeleteSupplier((int)LBSuppliers.SelectedValue);
-
-            KeyValuePair<string, int> v = (KeyValuePair<string, int>)LBSuppliers.SelectedItem;
-            SuppliersDB.Suppliers.Remove(v);
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -68,6 +60,14 @@ namespace ThreadedProject2
         private void btnCreateProduct_Click(object sender, EventArgs e)
         {
             new NewProduct().ShowDialog(this);
+        }
+
+        private void btnSupDelete_Click(object sender, EventArgs e)
+        {
+            bool res = SuppliersDB.DeleteSupplier((int)LBSuppliers.SelectedValue);
+
+            KeyValuePair<string, int> v = (KeyValuePair<string, int>)LBSuppliers.SelectedItem;
+            SuppliersDB.Suppliers.Remove(v);
         }
     }
 }

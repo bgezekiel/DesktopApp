@@ -68,6 +68,8 @@ namespace DBClasses
             //Make the filled list the SuppliersBindingSource (for later use)
             SuppliersBindingSource.DataSource = Suppliers;
         }
+
+
         public static int AddNewSupplier(string supplierName)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
