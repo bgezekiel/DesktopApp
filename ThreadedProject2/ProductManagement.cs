@@ -22,6 +22,10 @@ namespace ThreadedProject2
 {
     public partial class ProductManagement : Form
     {
+        // NEW
+        List<Products> list = new List<Products>();
+        List<Products> notInList = new List<Products>();
+
         //Create new empty BindingList and BindingSource
         BindingList<KeyValuePair<string, int>> FilteredList = new BindingList<KeyValuePair<string, int>>();
         BindingSource FilterSource = new BindingSource();
@@ -37,25 +41,29 @@ namespace ThreadedProject2
         public ProductManagement()
         {
             InitializeComponent();
+            loadList();
+
 
             //Display Key and Values in appropriate places on GUI
             comboBoxSupplier.ValueMember = "Value";
             comboBoxSupplier.DisplayMember = "Key";
-            lstProducts.ValueMember = "Value";
-            lstProducts.DisplayMember = "Key";
-            listProducts.ValueMember = "Value";
-            listProducts.DisplayMember = "Key";
+            
 
             //Bind the datasource for the combo box to the list generated in SuppliersDB
             comboBoxSupplier.DataSource = SuppliersDB.SuppliersBindingSource;
 
             //Filter the information based on the selectValChanged
             FilterSource.DataSource = FilteredList;
-            listProducts.DataSource = FilterSource;
+           
 
             SelectedSource.DataSource = SelectedList;
-            lstProducts.DataSource = SelectedSource;
+           
         }
+
+        private ProductsSuppliers prodsupp; // create object Package
+        private int selectedProductId;
+        private int selectedSupplierID;
+
 
         private void SelectValChanged(object sender, EventArgs e)
         {
@@ -73,14 +81,14 @@ namespace ThreadedProject2
                     //sql Command
                     string sqlCommand = "SELECT * FROM Products PD FULL OUTER JOIN Products_Suppliers PS ON " +
                                         "PS.ProductId = PD.ProductId FULL OUTER JOIN Suppliers SP ON " +
-                                        "SP.SupplierId = PS.SupplierId WHERE PS.SupplierId = @supp;";
+                                        "SP.SupplierId = PS.SupplierId WHERE PS.ProductId = @prod;";
 
                     //using the connection and the string command,
                     using (SqlCommand cmd = new SqlCommand(sqlCommand, con))
                     {
 
                         //Ask Hayden about this part
-                        cmd.Parameters.AddWithValue("@supp", comboBoxSupplier.SelectedValue);
+                        cmd.Parameters.AddWithValue("@prod", comboBoxSupplier.SelectedValue);
 
                         //using the data reader, read the data while there is still data in table
                         using (SqlDataReader sdr = cmd.ExecuteReader())
@@ -121,8 +129,6 @@ namespace ThreadedProject2
 
         }
 
-
-
         private void btnExitApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -133,6 +139,86 @@ namespace ThreadedProject2
             this.Close();
         }
 
+
+
+        private void comboBoxSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Grab supplier id from the combo box 
+            loadList();
+
+        }
+
+        private void btnCreatePackage_Click(object sender, EventArgs e)
+        {
+
+            ProductsSuppliersDB.AddProdSup(selectedProductId, selectedSupplierID);
+            loadList();
+
+
+        }
+
+        private void listProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listProducts.DataSource != null)
+            {
+                selectedProductId = listProducts.SelectedIndex;
+            }
+
+        }
+
+        private void loadList()
+        {
+            if (comboBoxSupplier.SelectedValue != null)
+            {
+
+                int supID = Convert.ToInt32(comboBoxSupplier.SelectedValue);
+                selectedSupplierID = supID;
+                try
+                {
+                    // run the slq query method (included in ProductSupplier table)
+                    list = ProductsDB.GetProducts(supID);
+
+                    // run the toher sql query method (the not in)
+                    notInList = ProductsDB.GetProdNotInList(supID);
+
+                    // Display info
+                    lstProducts.DataSource = list;
+                    lstProducts.DisplayMember = "ProdName";
+                    lstProducts.ValueMember = "ProductId";
+
+                    listProducts.DataSource = notInList;
+                    listProducts.DisplayMember = "ProdName";
+                    listProducts.ValueMember = "ProductId";
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete product from supplier?", "Delete", MessageBoxButtons.YesNo);
+
+            bool deleted = false;
+            ProductsSuppliers obj = new ProductsSuppliers();
+            obj.ProductId = Convert.ToInt32(lstProducts.SelectedValue);
+            obj.SupplierId = Convert.ToInt32(comboBoxSupplier.SelectedValue);
+
+            deleted = ProductsSuppliersDB.DeleteProductSupplier(obj);
+
+            if (deleted)
+            {
+                MessageBox.Show("Delete Successful");
+                loadList();
+                comboBoxSupplier.SelectedIndex = 0;
+            }
+            else
+            {
+                MessageBox.Show("Delete Failed.");
+            }
+        }
 
     }
 }

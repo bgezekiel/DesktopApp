@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPackages));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@
             this.lblPackageName = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblPackages = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +72,7 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.btnDelete);
@@ -86,14 +88,28 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(398, 146);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(168, 48);
+            this.btnCancel.TabIndex = 22;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // txtId
             // 
             this.txtId.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.Location = new System.Drawing.Point(538, 9);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(42, 29);
             this.txtId.TabIndex = 21;
+            this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnDelete
             // 
@@ -297,17 +313,17 @@
             this.lblPackages.TabIndex = 3;
             this.lblPackages.Text = "Packages";
             // 
-            // btnCancel
+            // label6
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(398, 146);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(168, 48);
-            this.btnCancel.TabIndex = 22;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Khaki;
+            this.label6.Location = new System.Drawing.Point(428, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 20);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Package Id:";
             // 
             // ViewPackages
             // 
@@ -358,5 +374,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label6;
     }
 }
