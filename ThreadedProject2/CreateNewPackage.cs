@@ -59,6 +59,8 @@ namespace ThreadedProject2
             //Bind the DataSource for the comboBox to the list generated from ProductsDB
 			comboBoxProducts.DataSource = ProductsDB.ProductsBindingSource;
 
+            
+
             //Filter the information based on the SelectValChanged (see below)
 			FilterSource.DataSource = FilteredList;
 			lstSuppliers.DataSource = FilterSource;

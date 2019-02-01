@@ -144,7 +144,7 @@ namespace ThreadedProject2
 
         private void comboBoxSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Grab supplier id from the combo box 
+            // Grab supplier id from the combo box
             loadList();
 
         }
@@ -223,5 +223,3 @@ namespace ThreadedProject2
 
     }
 }
-
-

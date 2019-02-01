@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 /**
  * Project: OOSD Threaded Project 2
- * 
+ *
 * ProductsDB class binds the data retrieved from the database to a KeyValue pair List
 * and allows for display by binding data to list.
-* 
-* Author: Hayden Belanger + Eugenia Chiu
+*
+* Author: Hayden Belanger + Eugenia Chiu + Brandon Ezekiel
 * Date: Jan 2019
 * Commenter: Eugenia Chiu and Hayden Belanger
 */
@@ -49,7 +49,7 @@ namespace DBClasses {
                 //Once connection is open, run SQL query command. In this case, select all data from Products Table
                 //cmd is passed the query and connection string
 				using (SqlCommand cmd = new SqlCommand("SELECT * FROM Products;", con)) {
-					using (SqlDataReader sdr = cmd.ExecuteReader()) { 
+					using (SqlDataReader sdr = cmd.ExecuteReader()) {
                         //While the data table still has data, continue reading
 						while (sdr.Read()) {
 
@@ -66,7 +66,7 @@ namespace DBClasses {
 			ProductsBindingSource.DataSource = Products;
 		}
 
-        //Method for adding new product 
+        //Method for adding new product
         public static int AddNewProduct(string productName)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
@@ -78,7 +78,7 @@ namespace DBClasses {
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO Products (ProdName) VALUES (@name);", con))
                 {
                     cmd.Parameters.AddWithValue("@name", productName);
- 
+
                     cmd.ExecuteNonQuery();
                 }
                 return id;
@@ -97,7 +97,7 @@ namespace DBClasses {
 
                 if (dr == DialogResult.Yes)
                 {
-                   
+
                     return true;
                 }
                 else
@@ -184,7 +184,7 @@ namespace DBClasses {
             {
                 con.Close(); // close connection to database
             }
-            return list; // returns row of data as prod 
+            return list; // returns row of data as prod
         }
     }
 }
