@@ -107,5 +107,84 @@ namespace DBClasses {
 
             }
         }
+
+        // method to display products in list boxes (used on manage page)
+        public static List<Products> GetProdNotInList(int supID)
+        {
+            List<Products> prodd = new List<Products>();
+            SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
+            string sql = "SELECT p.ProductId, p.ProdName " +
+                         "FROM Products p " +
+                         "WHERE p.ProductId NOT IN " +
+                         "(SELECT p.ProductId from Products " +
+                         "INNER JOIN Products_Suppliers ps " +
+                         "ON p.ProductId = ps.ProductId " +
+                         "INNER JOIN Suppliers s " +
+                         "ON s.SupplierId = ps.SupplierId " +
+                         "WHERE s.SupplierId = @SupplierId)";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@SupplierId", supID);
+
+            try
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Products proddd = new Products();
+                    proddd.ProductId = Convert.ToInt32(reader["ProductId"]);
+                    proddd.ProdName = Convert.ToString(reader["ProdName"]);
+                    prodd.Add(proddd);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return prodd;
+        }
+
+        // method to create list of package names to be used in the combobox
+        public static List<Products> GetProducts(int supID)
+        {
+            List<Products> list = new List<Products>();
+            Products prod = null;
+
+            SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()); // connection to database
+
+            string selectString = "select ps.ProductId, ProdName from Products p " +
+                                    "join Products_Suppliers ps on p.ProductId = ps.ProductId " +
+                                    "where ps.SupplierId = @SupplierId " + // sql statement to get information from database
+                                    "order by ProdName";
+            SqlCommand selectCommand = new SqlCommand(selectString, con);
+            selectCommand.Parameters.AddWithValue("@SupplierId", supID);
+            try
+            {
+                con.Open(); // open connection
+                SqlDataReader reader = selectCommand.ExecuteReader(); // start reading data
+                while (reader.Read())
+                {
+                    prod = new Products();
+                    prod.ProdName = reader["ProdName"].ToString();
+                    prod.ProductId = Convert.ToInt32(reader["ProductId"]);
+                    list.Add(prod);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close(); // close connection to database
+            }
+            return list; // returns row of data as prod 
+        }
     }
 }

@@ -54,8 +54,11 @@
     <Compile Include="PackagesDB.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="ProductsDB.cs" />
+    <Compile Include="ProductsSuppliers.cs" />
+    <Compile Include="ProductsSuppliersDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupDelStatements.cs" />
+    <Compile Include="Suppliers.cs" />
     <Compile Include="SuppliersDB.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="ViewPackagesDB.cs" />
