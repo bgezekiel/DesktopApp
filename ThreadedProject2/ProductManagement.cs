@@ -23,7 +23,7 @@ namespace ThreadedProject2
 {
     public partial class ProductManagement : Form
     {
-        // NEW
+        // NEW - lists for both products that are currently offered and not offered by a supplier
         List<Products> list = new List<Products>();
         List<Products> notInList = new List<Products>();
 
@@ -42,7 +42,7 @@ namespace ThreadedProject2
         public ProductManagement()
         {
             InitializeComponent();
-            loadList();
+            loadList(); // to load lists on when page is opened
 
 
             //Display Key and Values in appropriate places on GUI
