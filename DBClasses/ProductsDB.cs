@@ -86,24 +86,34 @@ namespace DBClasses {
 
         }
 
-        public static bool DeleteProduct(int id)
+        public static string DeleteProduct(int id)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
             {
-                con.Open();
-                DialogResult dr = MessageBox.Show("WARNING:\n" +
-                    "Are you sure you want to delete this product from the products list? ." +
-                    "\nContinue?", "Confirm Delete", MessageBoxButtons.YesNo);
-
-                if (dr == DialogResult.Yes)
+                try
                 {
+                    con.Open();
+                    DialogResult dr = MessageBox.Show("WARNING:\n" +
+                        "Are you sure you want to delete this product from the products list? ." +
+                        "\nContinue?", "Confirm Delete", MessageBoxButtons.YesNo);
 
-                    return true;
-                }
-                else
+                    if (dr == DialogResult.Yes)
+                    {
+                        SqlCommand cmd = new SqlCommand("DELETE FROM Products WHERE ProductId = @pid;", con);
+                        cmd.Parameters.AddWithValue("@pid", id);
+                        cmd.ExecuteNonQuery();
+
+                        return "SUCCESS";
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }catch(SqlException e)
                 {
-                    return false;
+                    return e.Message;
                 }
+                
 
             }
         }

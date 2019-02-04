@@ -69,5 +69,37 @@ namespace ThreadedProject2
             KeyValuePair<string, int> v = (KeyValuePair<string, int>)LBSuppliers.SelectedItem;
             SuppliersDB.Suppliers.Remove(v);
         }
+
+        private void btnProdDelete_Click(object sender, EventArgs e)
+        {
+            string res = ProductsDB.DeleteProduct((int)LBProducts.SelectedValue);
+
+            if(res != null)
+            {
+                if(res == "SUCCESS")
+                {
+
+                    KeyValuePair<string, int> vv = new KeyValuePair<string, int>("", -99);
+                    foreach(KeyValuePair<string, int> v in ProductsDB.Products)
+                    {
+                        if(v.Value == (int) LBProducts.SelectedValue)
+                        {
+                            vv = v;
+                        }
+                    }
+
+                    if(vv.Value != -99)
+                    {
+                        ProductsDB.Products.Remove(vv);
+                    }
+                    MessageBox.Show("Delete successful.", "Success");
+                }
+                else
+                {
+                    MessageBox.Show("Did not delete: " + res, "Error");
+                }
+                
+            }
+        }
     }
 }

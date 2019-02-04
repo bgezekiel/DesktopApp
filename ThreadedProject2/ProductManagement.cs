@@ -202,24 +202,26 @@ namespace ThreadedProject2
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete product from supplier?", "Delete", MessageBoxButtons.YesNo);
 
-            bool deleted = false;
-            ProductsSuppliers obj = new ProductsSuppliers();
-            obj.ProductId = Convert.ToInt32(lstProducts.SelectedValue);
-            obj.SupplierId = Convert.ToInt32(comboBoxSupplier.SelectedValue);
+                bool deleted = false;
+                ProductsSuppliers obj = new ProductsSuppliers();
+                obj.ProductId = Convert.ToInt32(lstProducts.SelectedValue);
+                obj.SupplierId = Convert.ToInt32(comboBoxSupplier.SelectedValue);
 
-            deleted = ProductsSuppliersDB.DeleteProductSupplier(obj);
+                deleted = ProductsSuppliersDB.DeleteProductSupplier(obj);
 
-            if (deleted)
-            {
-                MessageBox.Show("Delete Successful");
-                loadList();
-                comboBoxSupplier.SelectedIndex = 0;
+                if (deleted)
+                {
+                    lstProducts.Items.Remove((KeyValuePair<string, int>) lstProducts.SelectedItem);
+                    MessageBox.Show("Delete Successful");
+                    loadList();
+                }
+                else
+                {
+                    MessageBox.Show("Delete Failed.");
+                }
             }
-            else
-            {
-                MessageBox.Show("Delete Failed.");
-            }
-        }
+           
+           
 
     }
 }

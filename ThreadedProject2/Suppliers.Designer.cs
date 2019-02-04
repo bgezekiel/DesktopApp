@@ -35,13 +35,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSupDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnProdDelete = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.LBProducts = new System.Windows.Forms.ListBox();
             this.btnCreateProduct = new System.Windows.Forms.Button();
-            this.btnSupDelete = new System.Windows.Forms.Button();
-            this.btnProdDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -116,6 +116,18 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
+            // btnSupDelete
+            // 
+            this.btnSupDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
+            this.btnSupDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupDelete.Location = new System.Drawing.Point(62, 428);
+            this.btnSupDelete.Name = "btnSupDelete";
+            this.btnSupDelete.Size = new System.Drawing.Size(244, 40);
+            this.btnSupDelete.TabIndex = 7;
+            this.btnSupDelete.Text = "Delete Supplier";
+            this.btnSupDelete.UseVisualStyleBackColor = false;
+            this.btnSupDelete.Click += new System.EventHandler(this.btnSupDelete_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -139,6 +151,18 @@
             this.groupBox2.Size = new System.Drawing.Size(367, 450);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
+            // 
+            // btnProdDelete
+            // 
+            this.btnProdDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
+            this.btnProdDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProdDelete.Location = new System.Drawing.Point(55, 404);
+            this.btnProdDelete.Name = "btnProdDelete";
+            this.btnProdDelete.Size = new System.Drawing.Size(244, 40);
+            this.btnProdDelete.TabIndex = 7;
+            this.btnProdDelete.Text = "Delete Product";
+            this.btnProdDelete.UseVisualStyleBackColor = false;
+            this.btnProdDelete.Click += new System.EventHandler(this.btnProdDelete_Click);
             // 
             // label2
             // 
@@ -171,29 +195,6 @@
             this.btnCreateProduct.Text = "Add Product";
             this.btnCreateProduct.UseVisualStyleBackColor = false;
             this.btnCreateProduct.Click += new System.EventHandler(this.btnCreateProduct_Click);
-            // 
-            // btnSupDelete
-            // 
-            this.btnSupDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
-            this.btnSupDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupDelete.Location = new System.Drawing.Point(62, 428);
-            this.btnSupDelete.Name = "btnSupDelete";
-            this.btnSupDelete.Size = new System.Drawing.Size(244, 40);
-            this.btnSupDelete.TabIndex = 7;
-            this.btnSupDelete.Text = "Delete Supplier";
-            this.btnSupDelete.UseVisualStyleBackColor = false;
-            this.btnSupDelete.Click += new System.EventHandler(this.btnSupDelete_Click);
-            // 
-            // btnProdDelete
-            // 
-            this.btnProdDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
-            this.btnProdDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProdDelete.Location = new System.Drawing.Point(55, 404);
-            this.btnProdDelete.Name = "btnProdDelete";
-            this.btnProdDelete.Size = new System.Drawing.Size(244, 40);
-            this.btnProdDelete.TabIndex = 7;
-            this.btnProdDelete.Text = "Delete Product";
-            this.btnProdDelete.UseVisualStyleBackColor = false;
             // 
             // Suppliers
             // 
