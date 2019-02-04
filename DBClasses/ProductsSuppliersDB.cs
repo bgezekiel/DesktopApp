@@ -35,9 +35,9 @@ namespace DBClasses
                 con.Open(); // open connection to database
                 value = addCommand.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+               MessageBox.Show("Error. Please select a product.");
             }
             finally
             {

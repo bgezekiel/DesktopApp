@@ -64,6 +64,7 @@ namespace ThreadedProject2
         private ProductsSuppliers prodsupp; // create object Package
         private int selectedProductId;
         private int selectedSupplierID;
+        bool loaded = false;
 
 
         private void SelectValChanged(object sender, EventArgs e)
@@ -162,7 +163,12 @@ namespace ThreadedProject2
         {
             if (listProducts.DataSource != null)
             {
-                selectedProductId = listProducts.SelectedIndex;
+                try
+                {
+                    selectedProductId = Convert.ToInt32(listProducts.SelectedValue);
+                }
+                catch (Exception) { }
+                
             }
 
         }
@@ -211,7 +217,6 @@ namespace ThreadedProject2
 
                 if (deleted)
                 {
-                    lstProducts.Items.Remove((KeyValuePair<string, int>) lstProducts.SelectedItem);
                     MessageBox.Show("Delete Successful");
                     loadList();
                 }
