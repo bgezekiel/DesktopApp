@@ -33,7 +33,6 @@
 			this.LblDesc3 = new System.Windows.Forms.Label();
 			this.BtnAdmin = new System.Windows.Forms.Button();
 			this.BtnLogin = new System.Windows.Forms.Button();
-			this.ChkRemember = new System.Windows.Forms.CheckBox();
 			this.CBAgents = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
@@ -124,16 +123,6 @@
 			this.BtnLogin.UseVisualStyleBackColor = true;
 			this.BtnLogin.Click += new System.EventHandler(this.BtnLogIn);
 			// 
-			// ChkRemember
-			// 
-			this.ChkRemember.AutoSize = true;
-			this.ChkRemember.Location = new System.Drawing.Point(12, 377);
-			this.ChkRemember.Name = "ChkRemember";
-			this.ChkRemember.Size = new System.Drawing.Size(126, 17);
-			this.ChkRemember.TabIndex = 10;
-			this.ChkRemember.Text = "Remember Password";
-			this.ChkRemember.UseVisualStyleBackColor = true;
-			// 
 			// CBAgents
 			// 
 			this.CBAgents.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -149,7 +138,6 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(403, 500);
 			this.Controls.Add(this.CBAgents);
-			this.Controls.Add(this.ChkRemember);
 			this.Controls.Add(this.BtnLogin);
 			this.Controls.Add(this.BtnAdmin);
 			this.Controls.Add(this.LblDesc3);
@@ -179,7 +167,6 @@
 		private System.Windows.Forms.Label LblDesc3;
 		private System.Windows.Forms.Button BtnAdmin;
 		private System.Windows.Forms.Button BtnLogin;
-		private System.Windows.Forms.CheckBox ChkRemember;
 		private System.Windows.Forms.ComboBox CBAgents;
 	}
 }
