@@ -23,9 +23,10 @@ namespace ThreadedProject2
     public partial class MainMenu : Form
     {
         //Initialize main form
-        public MainMenu()
+        public MainMenu(string agentName, int agentID)
         {
             InitializeComponent();
+			LblAgent.Text = "AGENT " + agentName + ", " + agentID;
         }
 
         //Directs to view packages page

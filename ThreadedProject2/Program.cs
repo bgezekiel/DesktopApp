@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBClasses;
+using ThreadedProject2.Admin;
 
 namespace ThreadedProject2
 {
@@ -51,7 +52,7 @@ namespace ThreadedProject2
 			}
 
 			InitializeForms();
-			Application.Run(new MainMenu());
+			Application.Run(new LoginPage());
 
 
 		}
@@ -60,7 +61,7 @@ namespace ThreadedProject2
 
 			InitializeForms();
 			f.Hide();
-			Form f2 = new MainMenu();
+			Form f2 = new LoginPage();
 			f2.FormClosed += (s, args) => f.Close();
 			f2.Show();
 
@@ -70,6 +71,7 @@ namespace ThreadedProject2
 
 			SuppliersDB.InitializeList();
 			ProductsDB.InitializeList();
+			AgentsDB.InitializeList();
 		}
 	}
 }

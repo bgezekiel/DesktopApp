@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminArea.Designer.cs">
+      <DependentUpon>AdminArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ForcePasswordSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ForcePasswordSet.Designer.cs">
+      <DependentUpon>ForcePasswordSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateNewPackage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateNewPackage.Designer.cs">
       <DependentUpon>CreateNewPackage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -90,8 +109,17 @@
     <Compile Include="ViewPackages.Designer.cs">
       <DependentUpon>ViewPackages.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\AdminArea.resx">
+      <DependentUpon>AdminArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ForcePasswordSet.resx">
+      <DependentUpon>ForcePasswordSet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateNewPackage.resx">
       <DependentUpon>CreateNewPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -121,7 +149,6 @@
     <EmbeddedResource Include="ViewPackages.resx">
       <DependentUpon>ViewPackages.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

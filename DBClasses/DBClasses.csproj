@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgentsDB.cs" />
     <Compile Include="ConnectionSetup.cs">
       <SubType>Form</SubType>
     </Compile>

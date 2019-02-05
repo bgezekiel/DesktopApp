@@ -12,16 +12,14 @@ using System.Threading.Tasks;
 * Commenter: Brandon Ezekiel
 */
 
-namespace DBClasses
-{
-    // Make supplier class
-    public class Suppliers
-    {
-        // public get and set methods for colunms in suppliers table
-        public Suppliers() { }
+namespace DBClasses {
+	// Make supplier class
+	public class Suppliers {
+		// public get and set methods for colunms in suppliers table
+		public Suppliers() { }
 
-        public int SupplierId { get; set; }
+		public int SupplierId { get; set; }
 
-        public string SupName { get; set; }
-    }
+		public string SupName { get; set; }
+	}
 }

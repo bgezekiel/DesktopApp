@@ -218,7 +218,11 @@ namespace ThreadedProject2
 
 		private void ChangeDTPs(object sender, EventArgs e) {
 
-			if(DTPackageEnd.Value < DTPackageStart.Value) {
+			if(DTPackageStart.Value < DateTime.Today) {
+				DTPackageStart.Value = DateTime.Today;
+			}
+
+			if (DTPackageEnd.Value < DTPackageStart.Value) {
 				DTPackageEnd.Value = DTPackageStart.Value.AddDays(1);
 			}
 		}
