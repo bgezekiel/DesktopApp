@@ -148,6 +148,7 @@ namespace ThreadedProject2
                 btnUpdate.Visible = false;
                 btnDelete.Visible = false;
                 btnEdit.Visible = true;
+                btnCancel.Visible = false;
 
             }
             else
@@ -226,6 +227,22 @@ namespace ThreadedProject2
             btnDelete.Visible = false;
             btnEdit.Visible = true;
             btnCancel.Visible = false;
+        }
+
+        private void dtStart_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtStart.Value < DateTime.Today)
+            {
+                dtStart.Value = DateTime.Today;
+            }
+        }
+
+        private void dtEnd_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtEnd.Value <= dtStart.Value)
+            {
+                dtEnd.Value = dtStart.Value.AddDays(1);
+            }
         }
     }
 }
