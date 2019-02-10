@@ -71,6 +71,12 @@
     <Compile Include="Admin\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditPackagesProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPackagesProducts.Designer.cs">
+      <DependentUpon>EditPackagesProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPackagesProducts.resx">
+      <DependentUpon>EditPackagesProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

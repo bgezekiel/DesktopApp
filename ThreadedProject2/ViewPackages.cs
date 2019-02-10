@@ -72,6 +72,7 @@ namespace ThreadedProject2
             btnUpdate.Visible = false;
             btnDelete.Visible = false;
             btnCancel.Visible = false;
+			btnEditProducts.Visible = false;
         }
 
         // closes the window and to return to home window
@@ -147,6 +148,7 @@ namespace ThreadedProject2
                 richTextBox1.Enabled = false;
                 btnUpdate.Visible = false;
                 btnDelete.Visible = false;
+				btnEditProducts.Visible = false;
                 btnEdit.Visible = true;
                 btnCancel.Visible = false;
 
@@ -188,6 +190,7 @@ namespace ThreadedProject2
                 richTextBox1.Enabled = false;
                 btnUpdate.Visible = false;
                 btnDelete.Visible = false;
+				btnEditProducts.Visible = false;
                 btnEdit.Visible = true;
                 btnCancel.Visible = false;
 
@@ -208,6 +211,7 @@ namespace ThreadedProject2
             comboBox1.Enabled = false;
             btnUpdate.Visible = true;
             btnDelete.Visible = true;
+			btnEditProducts.Visible = true;
             btnEdit.Visible = false;
             btnCancel.Visible = true;
             
@@ -225,6 +229,7 @@ namespace ThreadedProject2
             richTextBox1.Enabled = false;
             btnUpdate.Visible = false;
             btnDelete.Visible = false;
+			btnEditProducts.Visible = false;
             btnEdit.Visible = true;
             btnCancel.Visible = false;
         }
@@ -244,5 +249,11 @@ namespace ThreadedProject2
                 dtEnd.Value = dtStart.Value.AddDays(1);
             }
         }
-    }
+
+		private void btnEditProducts_Click(object sender, EventArgs e) {
+
+
+			new EditPackagesProducts(packages.PackageId).ShowDialog(this);
+		}
+	}
 }
