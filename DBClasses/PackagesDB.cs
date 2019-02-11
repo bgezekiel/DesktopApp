@@ -12,7 +12,7 @@ using DBClasses;
 * Object class for building Packages objects and getting a list of such.
 * 
 * Author: Brandon Ezekiel
-* CoAuthor: Hayden Belanger
+* CoAuthor: Hayden Belanger and Eugenia Chiu
 * Date: Jan 2019
 * Commenter: Hayden Belanger and Eugenia Chiu
 */
@@ -86,7 +86,7 @@ namespace ThreadedProject2
 
                 //select the max value of the id from the table
 				int id = (int)new SqlCommand("SELECT MAX(PackageId) FROM Packages;", con).ExecuteScalar();
-
+                //make a new list for supplier ids
 				List<int> ProductSupplierId = new List<int>();
 				using (SqlCommand cmd = new SqlCommand("SELECT SupplierId, ProductSupplierId FROM Products_Suppliers;", con)) {
 
@@ -94,7 +94,7 @@ namespace ThreadedProject2
 					while (rd.Read()) {
 						foreach(int i in suppliers) {
 							if(i == rd.GetInt32(0)) {
-								ProductSupplierId.Add(rd.GetInt32(1));
+								ProductSupplierId.Add(rd.GetInt32(1)); //add supplier ids to list
 							}
 						}
 					}
@@ -102,7 +102,7 @@ namespace ThreadedProject2
 					rd.Close();
 				}
 
-
+                //insert into table in database
 				foreach(int i in ProductSupplierId) {
 					using(SqlCommand cmd = new SqlCommand("INSERT INTO Packages_Products_Suppliers(PackageId, ProductSupplierId) VALUES (@packid, @psid);", con)) {
 						cmd.Parameters.AddWithValue("@packid", id);

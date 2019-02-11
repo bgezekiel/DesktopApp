@@ -13,7 +13,8 @@ using System.Windows.Forms;
 * ProductsDB class binds the data retrieved from the database to a KeyValue pair List
 * and allows for display by binding data to list.
 *
-* Author: Hayden Belanger + Eugenia Chiu + Brandon Ezekiel
+* Author: Hayden Belanger
+* CoAuthor: Eugenia Chiu + Brandon Ezekiel
 * Date: Jan 2019
 * Commenter: Eugenia Chiu and Hayden Belanger
 */

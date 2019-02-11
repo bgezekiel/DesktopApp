@@ -4,6 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/**
+* Project: OOSD Threaded Project 2
+* Supplier SQL delete statements. This page enables the admin to delete suppliers 
+* and relationships from all tables
+*
+* Author: Hayden Belanger
+* Date: Jan 2019
+* Commenter: Eugenia Chiu and Hayden Belanger
+*/
+
 namespace DBClasses
 {
     class SupDelStatements

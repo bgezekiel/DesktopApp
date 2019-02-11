@@ -10,6 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/**
+* Project: OOSD Threaded Project 2
+* CreateNewPackages GUI code to display suppliers, products and create new packages
+* Author: Hayden Belanger
+* Date: Jan 2019
+* Commenter: Eugenia Chiu
+*/
+
 namespace ThreadedProject2 {
 	public partial class EditPackagesProducts : Form {
 
@@ -22,6 +30,8 @@ namespace ThreadedProject2 {
 		private static readonly KeyValuePair<string, int> DummyVal = new KeyValuePair<string, int>("ERR", -999);
 
 		private readonly int packageid;
+
+        //edit products in the packages method
 		public EditPackagesProducts(int packageid) {
 			InitializeComponent();
 

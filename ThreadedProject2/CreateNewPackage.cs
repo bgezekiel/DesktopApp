@@ -11,9 +11,10 @@ using System.Windows.Forms;
 using DBClasses;
 
 /**
- * Project: OOSD Threaded Project 2
+* Project: OOSD Threaded Project 2
 * CreateNewPackages GUI code to display suppliers, products and create new packages
-* Author: Hayden Belanger and Eugenia Chiu
+* Author: Eugenia Chiu
+* CoAuthor: Hayden Belanger
 * Date: Jan 2019
 * Commenter: Eugenia Chiu
 */
@@ -102,7 +103,7 @@ namespace ThreadedProject2
 				}
 
 				
-
+                //compare the two lists, if the supplier is in the packages list, then remove from products list
 				foreach(KeyValuePair<string, int> kva in SelectedList) {
 
 					bool found = false;
@@ -124,19 +125,21 @@ namespace ThreadedProject2
 			}
 			
 		}
-
+        //exit app button
 		private void ExitApp(object sender, EventArgs e) {
 			Application.Exit();
 		}
 
+        //back to main page button
 		private void BackClick(object sender, EventArgs e) {
 			this.Close();
 		}
 
+        //selected and add to package list button
 		private void BtnAddSelected(object sender, EventArgs e) {
 			if(btnAdd.Enabled == true) {
 				if (lstSuppliers.SelectedValue != null) {
-					KeyValuePair<string, int> val = DummyVal;
+					KeyValuePair<string, int> val = DummyVal; //set to a dummyVal to remove from suppliers list
 					foreach (KeyValuePair<string, int> v in FilteredList) {
 						if (v.Value == (int)lstSuppliers.SelectedValue) {
 							val = v;
@@ -158,11 +161,14 @@ namespace ThreadedProject2
 					btnRemove.BackColor = ColorEnabled;
 				}
 
+                //if there is 5 suppliers added to the new package list, disable the add button
+                //can only add 5 suppliers for the time being
 				if (SelectedList.Count == 5) {
 					btnAdd.Enabled = false;
 					btnAdd.BackColor = ColorDisabled;
 				}
 
+                //if there is a supplier linked to the package, then enable the create button
 				if(SelectedList.Count > 0) {
 					btnCreatePackage.Enabled = true;
 					btnCreatePackage.BackColor = ColorEnabled;

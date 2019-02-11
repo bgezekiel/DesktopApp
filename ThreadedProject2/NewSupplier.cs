@@ -14,7 +14,8 @@ using DBClasses;
 * 
 * GUI page to add new Supplier
 * 
-* Author: Eugenia Chiu + Hayden Belanger
+* Author: Eugenia Chiu
+* CoAuthor: Hayden Belanger
 * Date: Jan 2019
 * Commenter: Eugenia Chiu
 */

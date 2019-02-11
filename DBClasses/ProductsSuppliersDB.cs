@@ -6,6 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/**
+ * Project: OOSD Threaded Project 2
+ *
+* Products and Supplier DB class binds the data retrieved from the database to a KeyValue pair List
+* and allows for display by binding data to list.
+*
+* Author: Hayden Belanger
+* CoAuthor: Eugenia Chiu
+* Date: Jan 2019
+* Commenter: Eugenia Chiu and Hayden Belanger
+*/
+
 namespace DBClasses
 {
     public class ProductsSuppliersDB
@@ -46,16 +58,14 @@ namespace DBClasses
             return value; // return result to local variable
         }
 
+
+        //method for delete product from supplier table
         static public bool DeleteProductSupplier(ProductsSuppliers prodsup)
         {
             bool successful = false;
 
             SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
-
-
-
-
-
+            //delete sql string
             string deleteString = "delete from products_suppliers " +
                                    "where " +
                                    "ProductId = @ProductId " +

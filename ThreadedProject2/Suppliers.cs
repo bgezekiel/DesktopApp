@@ -16,7 +16,8 @@ using Microsoft.VisualBasic;
  * 
  * Suppliers class. Used for the Create/Edit/Delete suppliers page. 
 * 
-* Author: Hayden Belanger + Eugenia Chiu
+* Author: Eugenia Chiu
+* CoAuthor: Hayden Belanger
 * Date: Jan 2019
 * Commenter: Eugenia Chiu and Hayden Belanger
 */
@@ -52,16 +53,19 @@ namespace ThreadedProject2
             Application.Exit();
         }
 
+        //create supplier button
         private void BtnCreateSupplier_Click(object sender, EventArgs e)
         {
             new NewSupplier().ShowDialog(this);
         }
 
+        //create new product button
         private void btnCreateProduct_Click(object sender, EventArgs e)
         {
             new NewProduct().ShowDialog(this);
         }
 
+        //delete supplier button
         private void btnSupDelete_Click(object sender, EventArgs e)
         {
             bool res = SuppliersDB.DeleteSupplier((int)LBSuppliers.SelectedValue);
@@ -70,6 +74,7 @@ namespace ThreadedProject2
             SuppliersDB.Suppliers.Remove(v);
         }
 
+        //delete product button
         private void btnProdDelete_Click(object sender, EventArgs e)
         {
             string res = ProductsDB.DeleteProduct((int)LBProducts.SelectedValue);

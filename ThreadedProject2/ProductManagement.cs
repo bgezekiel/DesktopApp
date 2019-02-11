@@ -16,7 +16,7 @@ using System.Windows.Forms;
 * Manage Products/Suppliers GUI code to manage suppliers and products
 * Author: Brandon Ezekiel
 * Date: Jan 2019
-* Commenter: Brandon Ezekiel
+* Commenter: Brandon Ezekiel + Eugenia Chiu
 */
 
 namespace ThreadedProject2
@@ -204,6 +204,7 @@ namespace ThreadedProject2
             }
         }
 
+        //Delete button method
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete product from supplier?", "Delete", MessageBoxButtons.YesNo);

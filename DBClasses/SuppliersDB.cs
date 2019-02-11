@@ -15,6 +15,7 @@ using ThreadedProject2;
 * and allows for display by binding data to list.
 * 
 * Author: Hayden Belanger
+* CoAuthor: Eugenia Chiu
 * Date: Jan 2019
 * Commenter: Eugenia Chiu and Hayden Belanger
 */
@@ -70,6 +71,7 @@ namespace DBClasses
         }
 
 
+        //add new suppliers method
         public static int AddNewSupplier(string supplierName)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
@@ -79,6 +81,7 @@ namespace DBClasses
                 int id = (int)new SqlCommand("SELECT MAX(SupplierId)+1 FROM Suppliers;", con).ExecuteScalar();
                 id++;
 
+                //add new supplier with new supplier name and id from list+1
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO Suppliers (SupplierId, SupName) VALUES (@sid, @name);", con))
                 {
                     cmd.Parameters.AddWithValue("@sid", id);
@@ -90,6 +93,7 @@ namespace DBClasses
 
         }
 
+        //Select supplier
         public static bool[] GetSelectedValue(int supplierID)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
@@ -114,6 +118,8 @@ namespace DBClasses
                 }
             }
         }
+
+        //edit supplier and supplier products
         public static void EditValue(int productID, int supplierID, bool create)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
@@ -142,6 +148,7 @@ namespace DBClasses
             }
         }
 
+        //delete supplier method. This method calls on the SupDelStatements.cs file
         public static bool DeleteSupplier(int id)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
