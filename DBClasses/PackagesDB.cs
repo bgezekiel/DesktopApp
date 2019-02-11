@@ -11,7 +11,8 @@ using DBClasses;
  * Project: OOSD Threaded Project 2
 * Object class for building Packages objects and getting a list of such.
 * 
-* Author: Brandon Ezekiel, Hayden Belanger
+* Author: Brandon Ezekiel
+* CoAuthor: Hayden Belanger
 * Date: Jan 2019
 * Commenter: Hayden Belanger and Eugenia Chiu
 */
@@ -28,17 +29,17 @@ namespace ThreadedProject2
         public static Package GetPackages(int packID)
         {
 
-            List<Package> pack = new List<Package>();
+            List<Package> pack = new List<Package>(); //make new empty list of packages
             Package p;
             SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
             string query = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc FROM Packages WHERE PackageId = @PackageId";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@PackageId", packID);
+            cmd.Parameters.AddWithValue("@PackageId", packID); //protect against sql injection
             try
             {
                 con.Open();
-                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SingleRow);
-                if (reader.Read())
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SingleRow); //read data from whole row
+                if (reader.Read()) //if there is still data
                 {
                     p = new Package();
                     p.PackageId = (int)reader["PackageId"];
@@ -64,6 +65,7 @@ namespace ThreadedProject2
 
         }
 
+        //AddPackage method for new packages inserted by user
 		public static void AddPackage(string PackageName, DateTime StartDate, DateTime EndDate, string Desc, decimal BasePrice, decimal AgentComm, int[] suppliers) {
 
 			using(SqlConnection con = new SqlConnection(ConnectionString.Connection.Value())) {
@@ -82,6 +84,7 @@ namespace ThreadedProject2
 
 				}
 
+                //select the max value of the id from the table
 				int id = (int)new SqlCommand("SELECT MAX(PackageId) FROM Packages;", con).ExecuteScalar();
 
 				List<int> ProductSupplierId = new List<int>();

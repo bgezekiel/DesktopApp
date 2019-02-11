@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 /**
  * Project: OOSD Threaded Project 2
 * Package class with getters and setters
-* Author: Hayden Belanger + Brandon Ezekiel
+* Author: Hayden Belanger
+* CoAuthor: Brandon Ezekiel
 * Date: Jan 2019
 * Commenter: Eugenia Chiu and Hayden Belanger
 */

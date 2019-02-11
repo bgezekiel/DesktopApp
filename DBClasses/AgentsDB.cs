@@ -6,7 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/**
+* Project: OOSD Threaded Project 2
+* Database Connection String class to establish connection
+* Author: Hayden Belanger
+* Date: Jan 2019
+* Commenter: Eugenia Chiu and Hayden Belanger
+*/
 namespace DBClasses {
 	public class AgentsDB {
 
